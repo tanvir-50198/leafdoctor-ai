@@ -4,7 +4,10 @@ import os
 import requests
 import streamlit as st
 
-DEFAULT_API = os.getenv("API_URL", "http://localhost:8000").rstrip("/")
+DEFAULT_API = os.getenv(
+    "API_URL",
+    "https://leafdoctor-ai-6.onrender.com"
+).rstrip("/")
 
 # ---- edit these for your About page ----
 AUTHOR_NAME = "Abdur Rahman Tanvir"
