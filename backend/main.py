@@ -5,6 +5,8 @@ Needs models/model.pt and models/classes.json (created by the Colab notebook).
 """
 import io
 import json
+import os
+import urllib.request
 from pathlib import Path
 
 import torch
@@ -22,11 +24,27 @@ IMG_SIZE = 224
 MAX_BYTES = 10 * 1024 * 1024  # 10 MB
 LOW_CONF = 0.60  # below this we tell the user the model is unsure
 
-classes = json.loads((MODEL_DIR / "classes.json").read_text())
+
+
+def ensure_file(name: str, env_var: str) -> Path:
+    """Use the local file if present, otherwise download it from the URL in an env var."""
+    path = MODEL_DIR / name
+    url = os.getenv(env_var)
+    if not path.exists() and url:
+        MODEL_DIR.mkdir(parents=True, exist_ok=True)
+        print(f"Downloading {name} ...")
+        urllib.request.urlretrieve(url, path)
+    return path
+
+
+classes_path = ensure_file("classes.json", "CLASSES_URL")
+model_path = ensure_file("model.pt", "MODEL_URL")
+
+classes = json.loads(classes_path.read_text())
 
 model = models.efficientnet_v2_s(weights=None)
 model.classifier[1] = nn.Linear(model.classifier[1].in_features, len(classes))
-model.load_state_dict(torch.load(MODEL_DIR / "model.pt", map_location="cpu"))
+model.load_state_dict(torch.load(model_path, map_location="cpu"))
 model.eval()
 
 transform = T.Compose(
