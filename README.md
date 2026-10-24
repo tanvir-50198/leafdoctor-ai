@@ -21,11 +21,11 @@ Upload a leaf photo, get the disease, confidence score and treatment advice in s
 
 <div align="center">
 
-| Home | Diagnose |
+| Home | Diagnose  result |
 |:---:|:---:|
-| ![Home](docs/screenshots/home.png) | ![](docs/screenshots/diagnose.png) |
+| ![Home](docs/screenshots/home.png) | ![diagnose](docs/screenshots/diagnose.png) |
 
-| Diagnosis result | Crop Library |
+| Diagnosis | Crop Library |
 |:---:|:---:|
 | ![Result](docs/screenshots/result.png) | ![Library](docs/screenshots/library.png) |
 
