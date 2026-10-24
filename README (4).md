@@ -23,11 +23,11 @@ Upload a leaf photo, get the disease, confidence score and treatment advice in s
 
 | Home | Diagnose |
 |:---:|:---:|
-| ![Home](docs/screenshots/home.png) |![Result](docs/screenshots/result.png)  |
+| ![Home](docs/screenshots/home.png) |![Diagnose](docs/screenshots/result.png)  |
 
 | Diagnosis result | Crop Library |
 |:---:|:---:|
-|  ![Diagnose](docs/screenshots/diagnose.png)| ![Library](docs/screenshots/library.png) |
+|  ![Result](docs/screenshots/diagnose.png)| ![Library](docs/screenshots/library.png) |
 
 | Night mode |
 |:---:|
