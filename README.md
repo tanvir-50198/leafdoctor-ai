@@ -23,7 +23,7 @@ Upload a leaf photo, get the disease, confidence score and treatment advice in s
 
 | Home | Diagnose |
 |:---:|:---:|
-| ![Home](docs/screenshots/home.png) | ![Diagnose](docs/screenshots/diagnose.png) |
+| ![Home](docs/screenshots/home.png) | ![](docs/screenshots/diagnose.png) |
 
 | Diagnosis result | Crop Library |
 |:---:|:---:|
